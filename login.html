@@ -1,0 +1,60 @@
+<!-- login.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="C:\Users\abhay\Downloads\e-commerce\GORGEOUS.png" class="logo" alt=""></a>
+        <ul id="navbar">
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </section>
+
+    <section id="login">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="return loginUser()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <script>
+        function loginUser() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Save user details in CSV format (not secure, for demonstration purposes only)
+            var userData = username + ',' + password + '\n';
+            saveToCSV(userData);
+
+            console.log('User details saved to CSV:', userData);
+
+            // In a real-world scenario, you would send this data to a server for secure authentication
+
+            return false; // Prevent form submission for demonstration
+        }
+
+        function saveToCSV(data) {
+            var blob = new Blob([data], { type: 'text/csv' });
+            var link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'user_data.csv';
+            link.click();
+        }
+    </script>
+</body>
+</html>

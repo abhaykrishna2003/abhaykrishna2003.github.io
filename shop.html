@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce site</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="design.css">
+
+    <!-- Script for Cart functionality -->
+    <script>
+        function addToCart(productId, price) {
+            let cartItem = {
+                id: productId,
+                price: price,
+                quantity: 1
+            };
+
+            let cart = localStorage.getItem('cart');
+            if (cart) {
+                cart = JSON.parse(cart);
+                let existingItem = cart.find(item => item.id === productId);
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push(cartItem);
+                }
+            } else {
+                cart = [cartItem];
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            console.log(`Added Product ${productId} to Cart`);
+        }
+
+        function buyNow(productId, price) {
+            // Implement your logic for the "Buy Now" functionality
+            console.log(`Buy Now clicked for Product ${productId}`);
+        }
+    </script>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="C:\Users\abhay\Downloads\e-commerce\GORGEOUS.png" class="logo" alt=""></a>
+        <ul id="navbar">
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="C:\Users\abhay\Downloads\e-commerce\cart.html">Cart</a></li>
+        </ul>
+    </section>
+
+    <section id="products">
+        <!-- Dress 1 -->
+        <div class="polaroid">
+            <img src="dress1.jpg" alt="Dress 1">
+            <div class="buttons">
+                <button onclick="addToCart(1, 2000)">Add to Cart</button>
+                <button onclick="buyNow(1, 2000)">Buy Now</button>
+            </div>
+            <p class="price">Price: Rs 2000</p>
+        </div>
+
+        <!-- Dress 2 -->
+        <div class="polaroid">
+            <img src="dress2.jpg" alt="Dress 2">
+            <div class="buttons">
+                <button onclick="addToCart(2, 4500)">Add to Cart</button>
+                <button onclick="buyNow(2, 4500)">Buy Now</button>
+            </div>
+            <p class="price">Price: Rs 4500</p>
+        </div>
+
+        <!-- Dress 3 -->
+        <div class="polaroid">
+            <img src="dress3.jpg" alt="Dress 3">
+            <div class="buttons">
+                <button onclick="addToCart(3, 3000)">Add to Cart</button>
+                <button onclick="buyNow(3, 3000)">Buy Now</button>
+            </div>
+            <p class="price">Price: Rs 3000</p>
+        </div>
+
+        <!-- Dress 4 -->
+        <div class="polaroid">
+            <img src="dress4.jpg" alt="Dress 4">
+            <div class="buttons">
+                <button onclick="addToCart(4, 3000)">Add to Cart</button>
+                <button onclick="buyNow(4, 3000)">Buy Now</button>
+            </div>
+            <p class="price">Price: Rs 3000</p>
+        </div>
+
+        <!-- Dress 5 -->
+        <div class="polaroid">
+            <img src="dress5.jpg" alt="Dress 5">
+            <div class="buttons">
+                <button onclick="addToCart(5, 1500)">Add to Cart</button>
+                <button onclick="buyNow(5, 1500)">Buy Now</button>
+            </div>
+            <p class="price">Price: Rs 1500</p>
+        </div>
+
+        <!-- Dress 6 -->
+        <div class="polaroid">
+            <img src="dress6.jpg" alt="Dress 6">
+            <div class="buttons">
+                <button onclick="addToCart(6, 1600)">Add to Cart</button>
+                <button onclick="buyNow(6, 1600)">Buy Now</button>
+            </div>
+            <p class="price">Price: Rs 1600</p>
+        </div>
+
+        <!-- Dress 7 -->
+        <div class="polaroid">
+            <img src="dress7.jpg" alt="Dress 7">
+            <div class="buttons">
+                <button onclick="addToCart(7, 1200)">Add to Cart</button>
+                <button onclick="buyNow(7, 1200)">Buy Now</button>
+            </div>
+            <p class="price">Price: Rs 1200</p>
+        </div>
+
+        <!-- Dress 8 -->
+        <div class="polaroid">
+            <img src="dress8.jpg" alt="Dress 8">
+            <div class="buttons">
+                <button onclick="addToCart(8, 1000)">Add to Cart</button>
+                <button onclick="buyNow(8, 1000)">Buy Now</button>
+            </div>
+            <p class="price">Price: Rs 1000</p>
+        </div>
+
+        <!-- Dress 9 -->
+        <div class="polaroid">
+            <img src="dress9.jpg" alt="Dress 9">
+            <div class="buttons">
+                <button onclick="addToCart(9, 799)">Add to Cart</button>
+                <button onclick="buyNow(9, 799)">Buy Now</button>
+            </div>
+            <p class="price">Price: Rs 799</p>
+        </div>
+
+        <!-- Dress 10 -->
+        <div class="polaroid">
+            <img src="dress10.jpg" alt="Dress 10">
+            <div class="buttons">
+                <button onclick="addToCart(10, 999)">Add to Cart</button>
+                <button onclick="buyNow(10, 999)">Buy Now</button>
+            </div>
+            <p class="price">Price: Rs 999</p>
+        </div>
+
+        <!-- Dress 11 -->
+        <div class="polaroid">
+            <img src="dress11.jpg" alt="Dress 11">
+            <div class="buttons">
+                <button onclick="addToCart(11, 3400)">Add to Cart</button>
+                <button onclick="buyNow(11, 3400)">Buy Now</button>
+            </div>
+            <p class="price">Price: Rs 3400</p>
+        </div>
+
+        <!-- Dress 12 -->
+        <div class="polaroid">
+            <img src="dress12.jpg" alt="Dress 12">
+            <div class="buttons">
+                <button onclick="addToCart(12, 4500)">Add to Cart</button>
+                <button onclick="buyNow(12, 4500)">Buy Now</button>
+            </div>
+            <p class="price">Price: Rs 4500</p>
+        </div>
+
+        <!-- Add more dresses as needed -->
+        <!-- Repeat the structure below for each dress -->
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+
